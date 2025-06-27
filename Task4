@@ -1,0 +1,24 @@
+#include <Arduino.h> 
+
+const int micpin=A0;//Microphone pin
+const int ledpin=13; //LED pin
+
+void setup(){
+PinMode(micp=Pin,INPUT);
+PinMode(ledpin,OUTPUT);
+Serial.begin(9600);
+}
+
+void loop(){
+int micValue=analogRead(micpin);
+serial.println(micvalue);
+
+if(micValue>500){
+//simple threshold-based command recognition
+digitalWrite(ledpin, HIGH); // Turn ON LED if command recognized
+else{
+digitalWrite(ledpin, LOW); //Turn OFF LED
+}
+
+delay(100);
+}
